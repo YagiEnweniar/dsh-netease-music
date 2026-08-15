@@ -1,0 +1,18 @@
+# dsh-netease-music bundle patch: mounts the NetEase music player plugin into
+# the host composition of a dsh profile. The host half registers HTTP routes
+# under /plugins/ncm/* that drive the local `ncm-cli` (search / play / control /
+# state / daily / playlists); the client half renders the "音乐播放" entry in
+# the left sidebar and the player panel.
+#
+# Install: `dsh plugin --profile <name> add <this package>` (npm, a local path,
+# or a git URL). The `dsh plugin` command pnpm-installs the package into the
+# profile and reconciles it into the profile's bundle layer list.
+- insert:
+    - id: dsh-netease-music
+      name: dsh-netease-music
+      config:
+        # Path to @music163/ncm-cli/dist/index.js; leave empty to auto-detect
+        # the npm global install (APPDATA\\npm, npm_config_prefix, ~/.npm-global).
+        ncmCliEntry: ""
+        # Node executable used to run the CLI; empty = the DSH host process node.
+        nodeBin: ""
