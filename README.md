@@ -12,7 +12,7 @@ DeepSeek Harness 网易云音乐播放插件：侧边栏底部「音乐播放」
 从 GitHub 安装：
 
 ```sh
-npx -p @deepseek-ai/dsh dsh plugin --profile web add github:<owner>/dsh-netease-music
+npx -p @deepseek-ai/dsh dsh plugin --profile web add github:YagiEnweniar/dsh-netease-music
 ```
 
 本地路径安装（开发时）：
